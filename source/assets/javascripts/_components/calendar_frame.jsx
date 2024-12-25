@@ -1,7 +1,7 @@
 var CalendarFrame = React.createClass({
   statics: {
     modalId: "modal",
-    miqaatsUrl: '/data/miqaats.json'
+    miqaatsUrl: ['/data/miqaats.json', '/waras.json']
   },
   getInitialState: function () {
     return {
@@ -11,20 +11,27 @@ var CalendarFrame = React.createClass({
     };
   },
   componentDidMount: function () {
-    var request = new XMLHttpRequest(),
-    self = this;
-    request.open('GET', CalendarFrame.miqaatsUrl, true);
-    request.onreadystatechange = function () {
-      if (this.readyState === this.DONE){
-        if (this.status >= 200 && this.status < 400) {
-          self.setState({miqaats: JSON.parse(this.responseText)});
-        } else {
-          console.log(this);
+    var self = this,
+        miqaats = [];
+
+    CalendarFrame.miqaatsUrl.forEach(function(url, index) {
+      var request = new XMLHttpRequest();
+      request.open('GET', url, true);
+      request.onreadystatechange = function () {
+        if (this.readyState === this.DONE){
+          if (this.status >= 200 && this.status < 400) {
+            miqaats = miqaats.concat(JSON.parse(this.responseText));
+            if (index === CalendarFrame.miqaatsUrl.length - 1) {
+              self.setState({miqaats: miqaats});
+            }
+          } else {
+            console.log(this);
+          }
         }
-      }
-    };
-    request.send();
-    request = null;
+      };
+      request.send();
+      request = null;
+    });
   },
   navigateToToday: function () {
     this.setState({
