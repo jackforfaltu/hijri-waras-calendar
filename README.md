@@ -4,11 +4,10 @@
 
 Mumineen Calendar is a [Hijri calendar] for [Dawoodi Bohra Shia Muslims] who
 follow the 53rd Dai al-Mutlaq, His Holiness, [Syedna Aale Qadr Mufaddal
-Saifuddin] (_TUS_). It provides the user with the Hijri date, [Gregorian date]
+Saifuddin] (_TUS_). It provides the user with the Hijri date and [Gregorian date]
 for any day of the calendar year.
 
 This version is primarily written in JavaScript using [React] and [Middleman].
-It supercedes the [Ruby on Rails version] I wrote some time ago.
 
 [Dawoodi Bohra Shia Muslims]: https://www.thedawoodibohras.com/
 [Gregorian date]: http://en.wikipedia.org/wiki/Gregorian_calendar
@@ -19,6 +18,9 @@ It supercedes the [Ruby on Rails version] I wrote some time ago.
 [Syedna Aale Qadr Mufaddal Saifuddin]: https://www.thedawoodibohras.com/about-the-bohras/the-dai-al-mutlaq/53rd-dai-al-mutlaq/
 
 ## Setup
+
+Install Ruby Version 2.7.8
+Install Bundler 1.17.3
 
 ```shell
 git clone git@github.com:mygulamali/mumineen_calendar_js
