@@ -19,11 +19,11 @@ This version is primarily written in JavaScript using [React] and [Middleman].
 
 ## Setup
 
-Install Ruby Version 2.7.8 and the RubyGem Bundler 1.17.3
+Install Ruby Version 2.7.8, NodeJS and NPM, and the RubyGem Bundler 1.17.3
 
 ```shell
-git clone git@github.com:mygulamali/mumineen_calendar_js
-cd mumineen_calendar_js
+git clone https://github.com/jackforfaltu/hijri-waras-calendar.git
+cd hijri-waras-calendar
 bundle install
 cp .env.example .env
 cd source/assets/stylesheets
